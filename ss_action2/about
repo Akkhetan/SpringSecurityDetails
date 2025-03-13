@@ -1,0 +1,2 @@
+•	Implemented UserDetails interface to describe users
+•	Implemented UserDetailsService interface which has an in-memory list of users.
