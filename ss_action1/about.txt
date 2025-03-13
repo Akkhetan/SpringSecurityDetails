@@ -1,0 +1,8 @@
+This code achieves :
+
+	• Setup default Spring Security
+	• Configure UserDetailsService and a PasswordEncoder
+	• Use InMemoryUserDetailsManager which is simple implementation of UserDetailsService
+	• Define SecurityFilterChain bean to customize the handling of authentication and authorization,
+	• Uses HTTP Basic authentication
+
