@@ -1,0 +1,1 @@
+Implemented UserDetailsManager implementation: JdbcUserDetailsManager, by overriding default tables : users & authorities
