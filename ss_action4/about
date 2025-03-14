@@ -1,0 +1,4 @@
+•	Implemented custom filter alongside Spring security filter BasicAuthenticationFilter
+•	Added new filters before, after, or at the position of an existing filter.
+•	You can have multiple filters at the same position of an existing filter. In this case, the order in which the filters are executed is not defined.
+•	OncePerRequestFilter, implements logic to make sure that the filter’s doFilter() method is executed only one time per request.
