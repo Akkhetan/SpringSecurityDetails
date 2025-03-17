@@ -1,0 +1,1 @@
+Applied authorization constraints to a specific group of requests and permit all other request.
