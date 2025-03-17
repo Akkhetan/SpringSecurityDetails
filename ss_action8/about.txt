@@ -1,0 +1,2 @@
+Customised HttpBasic Authentication by adding response header on Authentication failure.
+Used implementation of AuthenticationEntryPoint for this
