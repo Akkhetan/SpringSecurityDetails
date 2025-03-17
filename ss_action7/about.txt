@@ -1,0 +1,3 @@
+Implemented strategy SecurityContextHolder.MODE_INHERITABLETHREADLOCAL for new Thread created by Spring Framework
+
+Implemented DelegatingSecurityContextCallable for new self managed Thread
