@@ -1,0 +1,1 @@
+Implemented basic Authorisation(of all endpoints) based on 'authorities'
