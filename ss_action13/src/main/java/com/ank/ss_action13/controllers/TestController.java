@@ -1,6 +1,7 @@
 package com.ank.ss_action13.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,6 +31,11 @@ public class TestController {
     @GetMapping("/a/b/c/d")
     public String getEnpointD() {
         return "Works /a/b/c/d GetMapping!";
+    }
+
+    @GetMapping("/product/{code}")
+    public String productCode(@PathVariable String code) {
+        return code;
     }
 
 

@@ -1,1 +1,2 @@
-Applied authorization constraints regardless of the path or HTTP method
+Applied authorization constraints regardless of the path or HTTP method.
+Also, provided one practical example on to deny all requests that use a value for the path variable that has anything else other than digits.
