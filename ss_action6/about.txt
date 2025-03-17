@@ -1,0 +1,1 @@
+Worked with SecurityContext, with strategy MODE_THREADLOCAL
