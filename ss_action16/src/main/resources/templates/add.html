@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<form action="/product/hello" method="post">
+    <span>Name:</span>
+    <span><input type="text" name="name" /></span>
+    <span><button type="submit">Hello</button></span>
+    <!--Here we are not adding csrf token to request when calling end point /product/hello. As for this endpoint csrf protection is disabled in config file.
+    <input type="hidden"
+           th:name="${_csrf.parameterName}"
+           th:value="${_csrf.token}" />-->
+
+
+</form>
+</body>
+</html>
+

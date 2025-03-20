@@ -1,4 +1,5 @@
-Added the CSRF token to the request through the form.
+# Added the CSRF token to the request through the form.
+# Disable csrf protection for particular endpoint
 
 An easy way to do this is to use a hidden input component, as in the default form login.
 

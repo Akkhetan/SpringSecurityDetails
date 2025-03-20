@@ -34,13 +34,11 @@ public class ProjectConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.formLogin(
-            c -> c.defaultSuccessUrl("/main", true)
-        );
+        http.formLogin(c -> c.defaultSuccessUrl("/product/main", true));
 
-        http.authorizeHttpRequests(
-            c -> c.anyRequest().authenticated()
-            );
+        http.csrf(c -> c.ignoringRequestMatchers("/product/hello"));   //disable csrf protection for this endpoint
+
+        http.authorizeHttpRequests(c -> c.anyRequest().authenticated());
 
         return http.build();
     }
