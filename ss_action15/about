@@ -1,0 +1,7 @@
+Call the POST endpoint without disabling CSRF protection.
+
+Need to obtain the CSRF token so that you can use it in the header of the call, which you do with HTTP POST.
+
+for passing from postman in header :
+Use 'X-CSRF-TOKEN' as key.
+Take value which you get from Spring security printed in logs via CsrfTokenLogger class
