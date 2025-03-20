@@ -35,4 +35,36 @@ public class DocumentsPermissionEvaluator implements PermissionEvaluator {
                                  Object permission) {
         return false;
     }
+
+    /*
+
+    This commented code to be used when authorising using  PreAuthorize instead of PostAuthorize. In that case above code should be commented
+
+    @Override
+    public boolean hasPermission(Authentication authentication,
+                                 Object target,
+                                 Object permission) {
+        return false;
+    }
+
+    @Override
+    public boolean hasPermission(Authentication authentication,
+                                 Serializable targetId,
+                                 String targetType,
+                                 Object permission) {
+        String code = targetId.toString();
+        Document document = documentRepository.findDocument(code);
+
+        String p = (String) permission;
+
+
+        boolean admin =
+                authentication.getAuthorities()
+                        .stream()
+                        .anyMatch(a -> a.getAuthority().equals(p));
+
+        return admin || document.getOwner().equals(authentication.getName());
+    }
+
+     */
 }
