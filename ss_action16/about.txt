@@ -1,0 +1,6 @@
+Added the CSRF token to the request through the form.
+
+An easy way to do this is to use a hidden input component, as in the default form login.
+
+In the example, we use Thymeleaf because it provides a straightforward way to obtain the request attribute value in the view.
+In our case, we need to print the CSRF token. Remember that the CsrfFilter adds the value of the token in the _csrf attribute of the request. It’s not mandatory to do this with Thymeleaf.
