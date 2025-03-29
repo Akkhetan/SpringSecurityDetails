@@ -1,6 +1,12 @@
 This section discusses the mechanism behind pre-filtering and post-filtering.
-Pre-filtering : You can use filtering to instruct the framework to validate values sent via the method parameters when someone calls a method. The framework filters values that don’t match the given criteria and calls the method only with values that do match them.
+Pre-filtering : You can use filtering to instruct the framework to validate values sent via the method parameters when someone calls a method.
+The framework filters values that don’t match the given criteria and calls the method only with values that do match them.
 
- Say you have an application for buying and selling products, and its backend implements the endpoint /sell. The application’s frontend calls this endpoint when a user sells a product. But the logged-in user can only sell products they own. Let’s implement a simple scenario of a service method called to sell the products received as a parameter.
+ Say you have an application for buying and selling products, and its backend implements the endpoint /sell. The application’s frontend calls this endpoint when a
+ user sells a product. But the logged-in user can only sell products they own. Let’s implement a simple scenario of a service method called to sell the products
+ received as a parameter.
 
- You need to be careful about the fact that the aspect changes the given collection. In our case, don’t expect it to return a new List instance. In fact, it’s the same instance from which the aspect removed the elements that didn’t match the given criteria. This is important to take into consideration. You must always make sure that the collection instance you provide is not immutable. Providing an immutable collection to be processed results in an exception at execution time because the filtering aspect won’t be able to change the collection’s contents
+ You need to be careful about the fact that the aspect changes the given collection. In our case, don’t expect it to return a new List instance. In fact, it’s the same
+ instance from which the aspect removed the elements that didn’t match the given criteria. This is important to take into consideration. You must always make sure that
+ the collection instance you provide is not immutable. Providing an immutable collection to be processed results in an exception at execution time because the filtering
+ aspect won’t be able to change the collection’s contents

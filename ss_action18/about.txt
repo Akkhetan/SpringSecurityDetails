@@ -1,10 +1,16 @@
 Implement Authorisation rule in separate class
 
-In this scenario, you have an application managing documents. Every document has an owner, which is the user who created the document. To get the details of an existing document, a user either must be an admin or they must be the owner of the document. We implement a permission evaluator to solve this requirement.
+In this scenario, you have an application managing documents. Every document has an owner, which is the user who created the document.
+To get the details of an existing document, a user either must be an admin or they must be the owner of the document. We implement a permission evaluator to solve this
+ requirement.
 
-The method in the service class is the one for which we apply the authorization rules. It defines a method that returns the Document by its unique code. We annotate this method with @PostAuthorize and use a hasPermission() SpEL expression. This method allows us to refer to an external authorization expression that we implement further in this example. Meanwhile, observe that the parameters we provide to the hasPermission() method are the returnObject, which represents the value returned by the method, and the name of the role for which we allow access, which is 'ROLE_admin'. The definition of this class is presented in the following listing.
+The method in the service class is the one for which we apply the authorization rules. It defines a method that returns the Document by its unique code.
+We annotate this method with @PostAuthorize and use a hasPermission() SpEL expression. This method allows us to refer to an external authorization expression that we
+implement further in this example. Meanwhile, observe that the parameters we provide to the hasPermission() method are the returnObject, which represents the value
+returned by the method, and the name of the role for which we allow access, which is 'ROLE_admin'. The definition of this class is presented in the following listing.
 
 For implementing permission logic, need to implement PermissionEvaluator contract.
-We don’t have to pass the Authentication object. Spring Security automatically provides this parameter value when calling the hasPermission() method. The framework knows the value of the authentication instance because it is already in the SecurityContext.
+We don’t have to pass the Authentication object. Spring Security automatically provides this parameter value when calling the hasPermission() method.
+The framework knows the value of the authentication instance because it is already in the SecurityContext.
 
 To make Spring Security aware of our new PermissionEvaluator implementation, we have to define a MethodSecurityExpressionHandler bean in the configuration class.
